@@ -1,6 +1,5 @@
 package com.ly.springboot.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ly.springboot.entity.Admin;
 import com.ly.springboot.entity.Student;
 import com.ly.springboot.entity.Teacher;

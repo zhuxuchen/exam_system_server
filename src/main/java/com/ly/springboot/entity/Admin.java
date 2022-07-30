@@ -1,10 +1,12 @@
 package com.ly.springboot.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 @Data
 public class Admin {
     //id
+    @TableId
     private Integer adminId;
     //姓名
     private String adminName;

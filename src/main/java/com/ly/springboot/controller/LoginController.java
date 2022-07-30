@@ -4,13 +4,10 @@ import com.ly.springboot.entity.Admin;
 import com.ly.springboot.entity.Login;
 import com.ly.springboot.entity.Student;
 import com.ly.springboot.entity.Teacher;
-import com.ly.springboot.mapper.LoginMapper;
 import com.ly.springboot.service.LoginService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

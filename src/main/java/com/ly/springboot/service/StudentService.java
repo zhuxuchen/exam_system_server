@@ -1,15 +1,10 @@
-package com.ly.springboot.mapper;
+package com.ly.springboot.service;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ly.springboot.entity.Student;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
-@Mapper
-public interface StudentMapper extends BaseMapper<Student> {
+public interface StudentService {
     /*
     使用MybatisPlus提供的增删改查方法
     1、根据id查询学生信息
@@ -23,11 +18,10 @@ public interface StudentMapper extends BaseMapper<Student> {
     5、添加学生信息
     insert(student)
      */
-
-    //分页查找所有学生信息
-    @Select("select * from student")
-    IPage<Student> selectAll(Page page);
-    //更改学生密码
-    @Update("update student set pwd = #{pwd} where studentId = #{studentId}")
+    Student selectById(int id);
+    IPage<Student> selectList(Page<Student> page);
+    int deleteById(int id);
+    int updateById(Student student);
+    int insert(Student student);
     int updatePwd(Student student);
 }

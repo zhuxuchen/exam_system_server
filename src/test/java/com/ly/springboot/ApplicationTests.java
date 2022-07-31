@@ -1,5 +1,7 @@
 package com.ly.springboot;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ly.springboot.entity.Student;
 import com.ly.springboot.mapper.LoginMapper;
 import com.ly.springboot.mapper.StudentMapper;
@@ -26,13 +28,15 @@ class ApplicationTests {
 
     @Test
     void studentTest(){
-        Student student = new Student();
-        student.setStudentId(20000);
-        student.setStudentName("123");
-        studentMapper.insert(student);
-        System.out.println(studentMapper.selectList(null));
-        System.out.println(studentMapper.selectById(20154001));
-        //studentMapper.deleteById()
-        //studentMapper.updateById(student);
+//        Student student = new Student();
+//        student.setStudentId(20000);
+//        student.setStudentName("123");
+//        studentMapper.insert(student);
+//        System.out.println(studentMapper.selectList(null));
+//        System.out.println(studentMapper.selectById(20154001));
+//        studentMapper.deleteById()
+//        studentMapper.updateById(student);
+        IPage<Student> page = new Page<Student>(1,5);
+        System.out.println(page);
     }
 }

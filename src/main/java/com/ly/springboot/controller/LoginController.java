@@ -1,9 +1,6 @@
 package com.ly.springboot.controller;
 
-import com.ly.springboot.entity.Admin;
-import com.ly.springboot.entity.Login;
-import com.ly.springboot.entity.Student;
-import com.ly.springboot.entity.Teacher;
+import com.ly.springboot.entity.*;
 import com.ly.springboot.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,21 +13,21 @@ public class LoginController {
     LoginService loginService;
 
     @PostMapping("/login")
-    String loginPage(@RequestBody Login login){
+    ApiResult loginPage(@RequestBody Login login){
         Integer username = login.getUsername();
         String password = login.getPassword();
         Admin admin = loginService.adminLogin(username,password);
         if (admin != null){
-            return "adminLogin!!";
+            return new ApiResult<>(200,"请求成功！",admin);
         }
         Teacher teacher = loginService.teacherLogin(username,password);
         if (teacher != null){
-            return "teacherLogin!!";
+            return new ApiResult<>(200,"请求成功！",teacher);
         }
         Student student = loginService.studentLogin(username,password);
         if (student != null){
-            return "studentLogin!!";
+            return new ApiResult<>(200,"请求成功！",student);
         }
-        return "error";
+        return new ApiResult<>(400,"请求失败！",null);
     }
 }

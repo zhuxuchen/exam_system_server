@@ -36,9 +36,9 @@ public class TeacherController {
     ApiResult deleteById(@PathVariable int id){
         boolean res = teacherService.removeById(id);
         if (res){
-            return new ApiResult(200,"删除成功！",res);
+            return new ApiResult(200,"删除成功！", true);
         }
-        return new ApiResult(404,"删除失败！",res);
+        return new ApiResult(404,"删除失败！", false);
     }
 
     //更新学生信息
@@ -46,9 +46,9 @@ public class TeacherController {
     ApiResult updateById(@RequestBody Teacher teacher){
         boolean res = teacherService.updateById(teacher);
         if (res){
-            return new ApiResult(200,"更新成功！",res);
+            return new ApiResult(200,"更新成功！", true);
         }
-        return new ApiResult(400,"更新失败！",res);
+        return new ApiResult(400,"更新失败！", false);
     }
 
     //添加老师信息
@@ -56,8 +56,8 @@ public class TeacherController {
     ApiResult insert(@RequestBody Teacher teacher){
         boolean res = teacherService.save(teacher);
         if (res){
-            return new ApiResult(200,"添加成功！",res);
+            return new ApiResult(200,"添加成功！", true);
         }
-        return new ApiResult(400,"添加失败！",res);
+        return new ApiResult(400,"添加失败！", false);
     }
 }

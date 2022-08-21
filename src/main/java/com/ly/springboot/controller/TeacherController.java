@@ -2,7 +2,6 @@ package com.ly.springboot.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.ly.springboot.entity.ApiResult;
 import com.ly.springboot.entity.Teacher;
 import com.ly.springboot.service.TeacherService;
 import com.ly.springboot.util.ResultCode;
@@ -43,7 +42,7 @@ public class TeacherController {
         return new ResultVo(400,"删除失败！", false);
     }
 
-    //更新学生信息
+    //更新老师信息
     @PutMapping("/teacher")
     ResultVo updateById(@RequestBody Teacher teacher){
         boolean res = teacherService.updateById(teacher);

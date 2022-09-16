@@ -1,4 +1,4 @@
-package com.ly.springboot;
+package com.ly.springboot.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;

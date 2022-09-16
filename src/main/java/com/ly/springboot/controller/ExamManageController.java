@@ -9,6 +9,8 @@ import com.ly.springboot.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class ExamManageController {
     @Autowired
@@ -20,6 +22,16 @@ public class ExamManageController {
         ExamManage examManage = examManageService.getById(id);
         if (examManage != null){
             return new ResultVo(examManage);
+        }
+        return new ResultVo(ResultCode.FAILED);
+    }
+
+    //查询所有考试信息
+    @GetMapping("/exams")
+    ResultVo selectAll(){
+        List<ExamManage> examManages = examManageService.list();
+        if (examManages != null){
+            return new ResultVo(examManages);
         }
         return new ResultVo(ResultCode.FAILED);
     }

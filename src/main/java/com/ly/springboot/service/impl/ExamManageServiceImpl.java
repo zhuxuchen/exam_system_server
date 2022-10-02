@@ -20,4 +20,9 @@ public class ExamManageServiceImpl extends ServiceImpl<ExamManageMapper, ExamMan
     public IPage<ExamManage> selectAll(Page<ExamManage> page) {
         return examManageMapper.selectAll(page);
     }
+
+    @Override
+    public ExamManage findPaperId() {
+        return examManageMapper.findPaperId();
+    }
 }

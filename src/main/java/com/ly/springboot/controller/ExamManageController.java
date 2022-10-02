@@ -73,4 +73,13 @@ public class ExamManageController {
         }
         return new ResultVo(400,"添加失败！", false);
     }
+
+    @GetMapping("/paperId")
+    ResultVo findPaperId(){
+        ExamManage res = examManageService.findPaperId();
+        if (res != null){
+            return new ResultVo(res);
+        }
+        return new ResultVo(ResultCode.FAILED);
+    }
 }

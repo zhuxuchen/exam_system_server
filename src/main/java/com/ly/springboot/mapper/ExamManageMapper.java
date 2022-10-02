@@ -13,4 +13,8 @@ public interface ExamManageMapper extends BaseMapper<ExamManage> {
     //分页查询
     @Select("select * from exam_manage")
     IPage<ExamManage> selectAll(Page page);
+
+    //查询最后一条记录的paperId，返回给前端达到paperId自增的效果
+    @Select("select paperId from exam_manage order by paperId desc limit 1")
+    ExamManage findPaperId();
 }

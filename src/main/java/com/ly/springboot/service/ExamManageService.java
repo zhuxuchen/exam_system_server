@@ -9,4 +9,6 @@ public interface ExamManageService extends IService<ExamManage> {
 
     //分页查询所有考试信息
     IPage<ExamManage> selectAll(Page<ExamManage> page);
+
+    ExamManage findPaperId();
 }

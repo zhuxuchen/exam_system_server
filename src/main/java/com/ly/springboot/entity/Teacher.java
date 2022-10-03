@@ -1,12 +1,13 @@
 package com.ly.springboot.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 @Data
 public class Teacher {
     //id
-    @TableId
+    @TableId(type = IdType.AUTO)
     private Integer teacherId;
     //姓名
     private String teacherName;

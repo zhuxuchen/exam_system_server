@@ -19,7 +19,7 @@ public class MultiQuestionController {
         return new ResultVo(res);
     }
 
-    @PostMapping("/MultiQuestion")
+    @PostMapping("/multiQuestion")
     ResultVo add(@RequestBody MultiQuestion multiQuestion){
         int res = multiQuestionService.add(multiQuestion);
         if (res != 0){

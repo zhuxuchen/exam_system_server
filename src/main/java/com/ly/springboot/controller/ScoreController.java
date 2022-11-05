@@ -52,4 +52,10 @@ public class ScoreController {
         }
         return new ResultVo(ResultCode.FAILED);
     }
+
+    @GetMapping("/scores/{examCode}")
+    ResultVo findByExamCode(@PathVariable("examCode") Integer examCode){
+        List<Score> res = scoreService.findByExamCode(examCode);
+        return new ResultVo(ResultCode.SUCCESS,res);
+    }
 }

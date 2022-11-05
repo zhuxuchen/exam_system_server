@@ -22,4 +22,9 @@ public interface ScoreMapper extends BaseMapper<Score> {
     @Select("select scoreId,examCode,studentId,subject,ptScore,etScore,score,answerDate" +
             " from score where studentId = #{studentId}")
     List<Score> findById(Integer studentId);
+
+    // 查询每位学生的学科分数
+    @Select("select max(etScore) as etScore from score " +
+            "where examCode = #{examCode} group by studentId")
+    List<Score> findByExamCode(Integer examCode);
 }

@@ -12,4 +12,6 @@ public interface ScoreService extends IService<Score> {
     IPage<Score> findByPageAndId(Page page, Integer studentId);
 
     List<Score> findById(Integer studentId);
+
+    List<Score> findByExamCode(Integer examCode);
 }

@@ -27,4 +27,9 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score>
     public List<Score> findById(Integer studentId) {
         return scoreMapper.findById(studentId);
     }
+
+    @Override
+    public List<Score> findByExamCode(Integer examCode) {
+        return scoreMapper.findByExamCode(examCode);
+    }
 }

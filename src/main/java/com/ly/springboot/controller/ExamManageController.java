@@ -38,7 +38,8 @@ public class ExamManageController {
 
     //查询分页考试信息
     @GetMapping("/exam/{currentPage}/{pageSize}")
-    ResultVo findAll(@PathVariable int currentPage,@PathVariable int pageSize){
+    ResultVo findAll(@PathVariable("currentPage") int currentPage,
+                     @PathVariable("pageSize") int pageSize){
         Page<ExamManage> examManagePage = new Page<>(currentPage,pageSize);
         IPage<ExamManage> examManage = examManageService.selectAll(examManagePage);
         return new ResultVo(examManage);

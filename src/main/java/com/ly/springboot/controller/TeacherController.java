@@ -25,7 +25,7 @@ public class TeacherController {
     }
 
     //查询全部教师信息带分页
-    @GetMapping("/teacher/{currentPage}/{pageSize}")
+    @GetMapping("/teachers/{currentPage}/{pageSize}")
     ResultVo findAll(@PathVariable int currentPage,@PathVariable int pageSize){
         Page<Teacher> teacherPage = new Page<>(currentPage,pageSize);
         IPage<Teacher> teacher = teacherService.selectAll(teacherPage);
